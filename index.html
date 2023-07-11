@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP-Memes-Lulich</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/de304c45f9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+     <div>
+    <h1>Generador de Memes</h1>
+  </div>
+  <nav>
+    <div class="buttonNav">
+      <i class="fa-regular fa-file-image"></i>
+      <span>Imagen</span>
+    </i>
+  </div>
+    <div class="buttonNav">
+      <i class="fa-solid fa-font"></i>
+      <span>Texto</span>
+    </i>
+  </div>
+    <div class="buttonNav">
+      <i class="fa-regular fa-lightbulb"></i>
+        <span>Modo oscuro</span>
+    </i>
+  </div>
+  <div class="buttonNav">
+    <i class="fa-regular fa-sun"></i>
+      <span>Modo claro</span>
+  </i>
+</div>
+  </nav>
+  </header>
+<main>
+  <div class="containerPrincipal" id="meme-container">
+  <div class="textoMeme" id="text-top">
+  Top text
+</div>
+<div class="imageMeme" id="meme-img">
+</div>
+<div class="textoMeme" id="text-bottom">
+  Botton text
+</div>
+<div class="buttonDownload">
+  <i class="fa-solid fa-circle-down"></i>
+  <span>Descargar meme</span>
+</div>
+  </div>
+</main>
+
+<!-- Inicio aside imagen -->
+<aside class="containerControl" id="controlImagen">
+  <h2>IMAGEN</h2>
+  <div>
+    <h5>URL</h5>
+    <input type="text">
+  </div>
+  <div>
+    <h5>FONDO</h5>
+  <input type="color">
+  </div>
+  <div>
+    <h4>FILTROS</h4>
+  </div>
+  <div class="controlRange">
+    <label for="rangeBrillo">Brillo</label>
+    <input type="range" id="r-Brillo">
+    
+    <label for="rangeOpacidad">Opacidad</label>
+    <input type="range" id="r-Opacidad">
+
+    <label for="rangeContraste">Contraste</label>
+    <input type="range" id="r-Contraste">
+
+    <label for="rangeDesenfoque">Desenfoque</label>
+    <input type="range" id="r-Desenfoque">
+
+    <label for="rangeEscalaGrises">Escala de Grises</label>
+    <input type="range" id="r-EscalaGrises">
+
+    <label for="rangeSepia">Sepia</label>
+    <input type="range" id="r-Sepia">
+
+    <label for="rangeHue">Hue</label>
+    <input type="range" id="r-Hue">
+
+    <label for="rangeSaturado">Saturado</label>
+    <input type="range" id="r-Saturado">
+
+    <label for="rangeNegativo">Negativo</label>
+    <input type="range" id="r-Negativo">
+
+  </div>
+  <div class="buttonFilters">
+    <span>Restablecer Filtros</span>
+  </div>
+</aside>
+
+<!-- Control texto aside -->
+<aside class="containerControl" id="controlText">
+  <h2>Texto</h2>
+  <div>
+      <label for="topText">Superior</label>
+      <input type="text" id="topText" placeholder="Texto superior">
+      <br>
+      <input type="checkbox" id="hideTopText">
+      <label for="hideTopText">Ocultar texto superior</label>
+      <br>
+  </div>
+
+  <div>
+      <label for="bottonText">Inferior</label>
+      <input type="text" id="bottomText" placeholder="Texto inferior">
+      <br>
+      <input type="checkbox" id="hideBottonText">
+      <label for="hideBottonText">Ocultar texto inferior</label>
+      <br>
+  </div>
+  <select id="fontFamily">
+      <option value="Arial">Arial</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Helvetica">Helvetica</option>
+      <option value="Roboto">Roboto</option>
+      <option value="TimesNewRoman">TimesNewRoman</option>
+      <option value="Bodoni">Bodoni</option>
+  </select>
+  <input type="number" id="fontSize" min="8" max="72" step="2" value="16">
+  <label for="fontSize">Tamaño de fuente (px)</label>
+  </div>
+  <div class="aligntext">
+      <button id="alignLeftBtn" class="alignButton">izq</button>
+      <button id="alignCenterBtn" class="alignButton">center</button>
+      <button id="alignRightBtn" class="alignButton">der</button>
+  </div>
+  <div>
+      <div>
+          <p>Color</p>
+          <input type="color" id="textColorInput" class="colorSelect">
+      </div>
+      <div>
+          <p>Fondo</p>
+          <input type="color" id="backgroundColorInput" class="colorSelect">
+          <div id="colorHex"></div>
+          <input type="checkbox" id="checkboxTransparente">
+          <label for="transparentCheckbox">Fondo transparente</label>
+      </div>
+  </div>   
+</aside>
+
+<main>
+  <div class="memeContainer">
+      <div class="previewText divTransparente" id="backTopText">
+          <h2 id="previewTopText"></h2>
+          </div>
+      <div class="previewText divTransparente" id="backBottonText">
+          <h2 id="previewBottomText"></h2>
+      </div>
+  </div>
+</main>
+
+<!-- Checkbox para fondo transparente
+<input type="checkbox" id="checkboxTransparente"> Hacer transparente -->
+
+<script src="script.js"></script>
+</body>
+</html>
