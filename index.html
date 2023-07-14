@@ -13,153 +13,166 @@
 </head>
 
 <body>
-  <header>
+  <div>
     <div>
-      <h1>Generador de Memes</h1>
+      <header>
+        <div>
+          <h1>Generador de Memes</h1>
+        </div>
+        <nav>
+          <div class="buttonNav">
+            <i class="fa-regular fa-file-image"></i>
+            <span>Imagen</span>
+            </i>
+          </div>
+          <div class="buttonNav">
+            <i class="fa-solid fa-font"></i>
+            <span>Texto</span>
+            </i>
+          </div>
+          <div class="buttonNav">
+            <i class="fa-regular fa-lightbulb"></i>
+            <span>Modo oscuro</span>
+            </i>
+          </div>
+          <div class="buttonNav">
+            <i class="fa-regular fa-sun"></i>
+            <span>Modo claro</span>
+            </i>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="containerPrincipal" id="meme-container">
+          <div class="textoMeme" id="text-top">
+            Top text
+          </div>
+          <div class="imageMeme" id="meme-img">
+          </div>
+          <div class="textoMeme" id="text-bottom">
+            Botton text
+          </div>
+          <div class="buttonDownload">
+            <i class="fa-solid fa-circle-down"></i>
+            <span>Descargar meme</span>
+          </div>
+        </div>
+      </main>
     </div>
-    <nav>
-      <div class="buttonNav">
-        <i class="fa-regular fa-file-image"></i>
-        <span>Imagen</span>
-        </i>
-      </div>
-      <div class="buttonNav">
-        <i class="fa-solid fa-font"></i>
-        <span>Texto</span>
-        </i>
-      </div>
-      <div class="buttonNav">
-        <i class="fa-regular fa-lightbulb"></i>
-        <span>Modo oscuro</span>
-        </i>
-      </div>
-      <div class="buttonNav">
-        <i class="fa-regular fa-sun"></i>
-        <span>Modo claro</span>
-        </i>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <div class="containerPrincipal" id="meme-container">
-      <div class="textoMeme" id="text-top">
-        Top text
-      </div>
-      <div class="imageMeme" id="meme-img">
-      </div>
-      <div class="textoMeme" id="text-bottom">
-        Botton text
-      </div>
-      <div class="buttonDownload">
-        <i class="fa-solid fa-circle-down"></i>
-        <span>Descargar meme</span>
-      </div>
-    </div>
-  </main>
-
-  <!-- Inicio aside imagen -->
-  <aside class="containerControlDark" id="controlImagen">
-    <h2>IMAGEN</h2>
-    <div>
-      <h5>URL</h5>
-      <input type="text">
-    </div>
-    <div>
-      <h5>FONDO</h5>
-      <input type="color" class="input-color">
-    </div>
-    <div>
-      <h4>FILTROS</h4>
-    </div>
-    <div class="controlRange">
-      <label for="r-Brillo">Brillo</label>
-      <input type="range" id="r-Brillo">
-
-      <label for="r-Opacidad">Opacidad</label>
-      <input type="range" id="r-Opacidad">
-
-      <label for="r-Contraste">Contraste</label>
-      <input type="range" id="r-Contraste">
-
-      <label for="r-Desenfoque">Desenfoque</label>
-      <input type="range" id="r-Desenfoque">
-
-      <label for="r-EscalaGrises">Escala de Grises</label>
-      <input type="range" id="r-EscalaGrises">
-
-      <label for="r-Sepia">Sepia</label>
-      <input type="range" id="r-Sepia">
-
-      <label for="rangeHue">Hue</label>
-      <input type="range" id="r-Hue">
-
-      <label for="r-Saturado">Saturado</label>
-      <input type="range" id="r-Saturado">
-
-      <label for="rangeNegativo">Negativo</label>
-      <input type="range" id="r-Negativo">
-    </div>
-
-    <div class="buttonFilters">
-      <span>Restablecer Filtros</span>
-    </div>
-  </aside>
-
-  <!-- Control texto aside -->
-  <aside class="containerControlDark text-container" id="controlText">
-    <h2>TEXTO</h2>
-    <div class="text-container">
-      <h3>Texto superior</h3>
+    <!-- Inicio aside imagen -->
+    <aside class="containerControlDark" id="controlImagen">
+      <h2>IMAGEN</h2>
       <div>
-        <label for="topText"></label>
-        <input type="text" id="topText" placeholder="Texto superior">
+        <h4>URL</h4>
+        <input type="text">
       </div>
       <div>
-       <input type="checkbox" id="hideTopText">
-      <label for="hideTopText">Sin texto superior</label> 
-      </div> 
-    </div>
-    <div class="text-container">
-      <h3>Texto inferior</h3>
-      <div>
-        <label for="bottonText"></label>
-        <input type="text" id="bottomText" placeholder="Texto inferior">
+        <h4>FONDO</h4>
+        <div>
+         <button>
+          <input type="color" id="imgColorInput" class="input-color">
+          <span>#00000</span>
+        </button> 
+        <select id="imgEstilo">
+          <option value="unset">Ninguno</option>
+          <option value="lighten">Aclarar</option>
+          <option value="darken">Oscurecer</option>
+          <option value="difference">Diferencia/option>
+          <option value="iluminosity">Luminosidad</option>
+          <option value="multiply">Multiplicar</option>
+        </select>
+        </div>
+        
       </div>
       <div>
-        <input type="checkbox" id="hideBottonText">
-        <label for="hideBottonText">Sin texto inferior</label>
+        <h4>FILTROS</h4>
       </div>
-    </div>
-    <div class="text-container">
-      <h3>Fuente</h3>
-      <select id="fontFamily">
-        <option value="Arial">Arial</option>
-        <option value="Verdana">Verdana</option>
-        <option value="Helvetica">Helvetica</option>
-        <option value="Roboto">Roboto</option>
-        <option value="TimesNewRoman">TimesNewRoman</option>
-        <option value="Bodoni">Bodoni</option>
-      </select>
-    </div>
-    <div class="aligntext">
-      <input type="number" id="fontSize" min="8" max="72" step="2" value="16">
-      <label for="fontSize"></label>
-      <button id="alignLeftBtn" class="alignButton">izq</button>
-      <button id="alignCenterBtn" class="alignButton">center</button>
-      <button id="alignRightBtn" class="alignButton">der</button>
-    </div>
-    </div>
-    <div>
+      <div class="controlRange">
+        <label for="r-Brillo">Brillo</label>
+        <input type="range" id="r-Brillo">
+
+        <label for="r-Opacidad">Opacidad</label>
+        <input type="range" id="r-Opacidad">
+
+        <label for="r-Contraste">Contraste</label>
+        <input type="range" id="r-Contraste">
+
+        <label for="r-Desenfoque">Desenfoque</label>
+        <input type="range" id="r-Desenfoque">
+
+        <label for="r-EscalaGrises">Escala de Grises</label>
+        <input type="range" id="r-EscalaGrises">
+
+        <label for="r-Sepia">Sepia</label>
+        <input type="range" id="r-Sepia">
+
+        <label for="rangeHue">Hue</label>
+        <input type="range" id="r-Hue">
+
+        <label for="r-Saturado">Saturado</label>
+        <input type="range" id="r-Saturado">
+
+        <label for="rangeNegativo">Negativo</label>
+        <input type="range" id="r-Negativo">
+      </div>
+      <div class="buttonFilters">
+        <span>Restablecer Filtros</span>
+      </div>
+    </aside>
+
+    <!-- Control texto aside -->
+    <aside class="containerControlDark text-container" id="controlText">
+      <h2>TEXTO</h2>
+      <div class="text-container">
+        <h4>Texto superior</h4>
+        <div>
+          <label for="topText"></label>
+          <input type="text" id="topText" placeholder="Texto superior">
+        </div>
+        <div>
+          <input type="checkbox" id="hideTopText">
+          <label for="hideTopText">Sin texto superior</label>
+        </div>
+      </div>
+      <div class="text-container">
+        <h4>Texto inferior</h4>
+        <div>
+          <label for="bottonText"></label>
+          <input type="text" id="bottomText" placeholder="Texto inferior">
+        </div>
+        <div>
+          <input type="checkbox" id="hideBottonText">
+          <label for="hideBottonText">Sin texto inferior</label>
+        </div>
+      </div>
+      <div class="text-container">
+        <h4>Fuente</h4>
+        <select id="fontFamily">
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Helvetica">Helvetica</option>
+          <option value="Roboto">Roboto</option>
+          <option value="TimesNewRoman">TimesNewRoman</option>
+          <option value="Bodoni">Bodoni</option>
+        </select>
+      </div>
+      <div class="aligntext">
+        <input type="number" id="fontSize" min="8" max="72" step="2" value="16">
+        <label for="fontSize"></label>
+        <button id="alignLeftBtn" class="alignButton">izq</button>
+        <button id="alignCenterBtn" class="alignButton">center</button>
+        <button id="alignRightBtn" class="alignButton">der</button>
+      </div>
       <div class="container-color">
         <div class="text-container">
-          <p>Color</p>
+          <h4>Color</h4>
           <button>
             <input type="color" id="textColorInput" class="input-color">
             <span>#00000</span>
           </button>
         </div>
         <div class="text-container">
-          <p>Fondo</p>
+          <h4>Fondo</h4>
           <button>
             <input type="color" id="backgroundColorInput" class="input-color">
             <span>#00000</span>
@@ -170,28 +183,35 @@
         <input type="checkbox" id="checkboxTransparente">
         <label for="transparentCheckbox">Fondo transparente</label>
       </div>
-    </div>
-    <div class="container-color">
-      <button id="ningunob-btn" class="">Ninguno</button>
-      <button id="claro-btn" class="">Claro</button>
-      <button id="oscuro-btn" class="">Oscuro</button>
-    </div>
-  </aside>
-
-  <main>
-    <div class="memeContainer">
-      <div class="previewText divTransparente" id="backTopText">
-        <h2 id="previewTopText"></h2>
+      <div >
+        <h4>Contorno</h4>
+        <div class="container-color">
+          <button id="ningunob-btn" class="">Ninguno</button>
+          <button id="claro-btn" class="">Claro</button>
+          <button id="oscuro-btn" class="">Oscuro</button>
+        </div>
       </div>
-      <div class="previewText divTransparente" id="backBottonText">
-        <h2 id="previewBottomText"></h2>
+      <div>
+        <h4>Espaciado</h4>
+        <input type="number" id="fontSpace" min="10" max="50" step="1" value="35">
       </div>
-    </div>
+      <div>
+        <h4>Interlineado</h4>
+        <select id="fontInterlineado">
+          <option value="0.8">0.8</option>
+          <option value="1">1</option>
+          <option value="1.2">1.2</option>
+          <option value="1.5">1.5</option>
+          <option value="2">2</option>
+          <option value="2.5">2.5</option>
+        </select>
+      </div>
 
-  </main>
-
-  <!-- Checkbox para fondo transparente
-<input type="checkbox" id="checkboxTransparente"> Hacer transparente -->
+  </div>
+  </div>
+  <div>
+    </aside>
+  </div>
 
   <script src="script.js"></script>
 </body>
