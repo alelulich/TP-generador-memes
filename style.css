@@ -68,6 +68,8 @@ main {
     align-items: center;
     flex-direction: column;
     background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .texto-meme {
     width: 100%;
@@ -80,12 +82,19 @@ main {
     color: black;
     padding: 20px;
 }
+.text-outline-light{
+    -webkit-text-stroke: 3px white;
+}
+.text-outline-dark{
+    -webkit-text-stroke: 3px black;
+}
 .img-meme {
     width: 100%;
     height: 70%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    flex-grow: 1;
 }
 .buttonDownload {
     background-color: green;

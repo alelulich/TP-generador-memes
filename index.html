@@ -15,7 +15,7 @@
 <body>
   <div>
     <div>
-      <header class="header-dark" id="head-container" >
+      <header class="header-dark" id="head-container">
         <div>
           <h1>Generador de Memes</h1>
         </div>
@@ -29,13 +29,17 @@
       </header>
       <main class="main-dark" id="main-container">
         <div class="container-meme" id="meme-container">
-          <div class="texto-meme" id="preview-txt-top">
-            Top text
+          <div class="texto-meme" id="container-txt-top">
+            <h3 class="" id="preview-txt-top">
+              Top text
+            </h3>
           </div>
           <div class="img-meme" id="img-meme">
           </div>
-          <div class="texto-meme" id="preview-txt-bottom">
-            Botton text
+          <div class="texto-meme" id="container-txt-botton">
+            <h3 class="" id="preview-txt-bottom">
+              Botton text
+            </h3>
           </div>
         </div>
         <div class="buttonDownload">
@@ -104,14 +108,14 @@
       </div>
     </aside>
 
-    <!-- Control texto aside -->
+    <!-- -------------Control texto aside---------------------------------------------------->
     <aside class="container-control dark-aside hiden" id="control-text">
       <h3>TEXTO</h3>
       <div class="text-container">
         <h4>Texto superior</h4>
         <div>
           <label for="top-txt"></label>
-          <input type="text" id="top-txt" placeholder="Texto superior">
+          <input type="text" id="top-txt" maxlength="25" placeholder="Texto superior">
         </div>
         <div>
           <input type="checkbox" id="hidenTopTxt">
@@ -122,7 +126,7 @@
         <h4>Texto inferior</h4>
         <div>
           <label for="botton-txt"></label>
-          <input type="text" id="botton-txt" placeholder="Texto inferior">
+          <input type="text" id="botton-txt" maxlength="25" placeholder="Texto inferior">
         </div>
         <div>
           <input type="checkbox" id="hidenTxtBotton">
@@ -149,7 +153,7 @@
         <button id="align-center-btn" type="button" class="alignButton">
           <i class="fa-solid fa-align-justify"></i>
         </button>
-        <button id="align-right-btn"  type="button" class="alignButton">
+        <button id="align-right-btn" type="button" class="alignButton">
           <i class="fa-solid fa-align-right"></i>
         </button>
       </div>
@@ -158,36 +162,36 @@
           <h4>Color</h4>
           <button>
             <input type="color" id="txt-color-input" class="input-color">
-            <span>#00000</span>
+            <span id="txt-color-name">#00000</span>
           </button>
         </div>
         <div class="text-container">
           <h4>Fondo</h4>
           <button>
-            <input type="color" id="backgroundColorInput" class="input-color">
-            <span>#00000</span>
+            <input type="color" id="background-color-input" class="input-color">
+            <span id="background-color-name">#00000</span>
           </button>
         </div>
       </div>
       <div>
-        <input type="checkbox" id="checkboxTransparente">
-        <label for="transparentCheckbox">Fondo transparente</label>
+        <input type="checkbox" id="checkbox-transparent">
+        <label for="checkbox-transparent">Fondo transparente</label>
       </div>
       <div>
         <h4>Contorno</h4>
         <div class="container-color">
-          <button id="ningunob-btn" class="">Ninguno</button>
-          <button id="claro-btn" class="">Claro</button>
-          <button id="oscuro-btn" class="">Oscuro</button>
+          <button id="outline-none-btn" class="">Ninguno</button>
+          <button id="outline-light-btn" class="">Claro</button>
+          <button id="outline-dark-btn" class="">Oscuro</button>
         </div>
       </div>
       <div>
         <h4>Espaciado</h4>
-        <input type="number" id="fontSpace" min="10" max="50" step="1" value="35">
+        <input type="number" id="font-space" min="10" max="50" step="1" value="35">
       </div>
       <div>
         <h4>Interlineado</h4>
-        <select id="fontInterlineado">
+        <select id="font-line">
           <option value="0.8">0.8</option>
           <option value="1">1</option>
           <option value="1.2">1.2</option>
@@ -196,9 +200,9 @@
           <option value="2.5">2.5</option>
         </select>
       </div>
-      </div>
-      </div>
-      <div>
+  </div>
+  </div>
+  <div>
     </aside>
   </div>
 
