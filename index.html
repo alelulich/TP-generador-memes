@@ -15,74 +15,58 @@
 <body>
   <div>
     <div>
-      <header>
+      <header class="header-dark" id="head-container" >
         <div>
           <h1>Generador de Memes</h1>
         </div>
         <nav>
-          <div class="buttonNav">
-            <i class="fa-regular fa-file-image"></i>
-            <span>Imagen</span>
-            </i>
-          </div>
-          <div class="buttonNav">
-            <i class="fa-solid fa-font"></i>
-            <span>Texto</span>
-            </i>
-          </div>
-          <div class="buttonNav">
-            <i class="fa-regular fa-lightbulb"></i>
-            <span>Modo oscuro</span>
-            </i>
-          </div>
-          <div class="buttonNav">
-            <i class="fa-regular fa-sun"></i>
-            <span>Modo claro</span>
-            </i>
+          <div>
+            <button class="btn-nav-dark" id="img-btn">Imagen</button>
+            <button class="btn-nav-dark" id="txt-btn">Texto</button>
+            <button class="btn-nav-dark" id="modo-btn">🌙 Modo Oscuro</button>
           </div>
         </nav>
       </header>
-      <main>
-        <div class="containerPrincipal" id="meme-container">
-          <div class="textoMeme" id="text-top">
+      <main class="main-dark" id="main-container">
+        <div class="container-meme" id="meme-container">
+          <div class="texto-meme" id="txt-top">
             Top text
           </div>
-          <div class="imageMeme" id="meme-img">
+          <div class="img-meme" id="img-meme">
           </div>
-          <div class="textoMeme" id="text-bottom">
+          <div class="texto-meme" id="txt-bottom">
             Botton text
           </div>
-          <div class="buttonDownload">
-            <i class="fa-solid fa-circle-down"></i>
-            <span>Descargar meme</span>
-          </div>
+        </div>
+        <div class="buttonDownload">
+          <i class="fa-solid fa-circle-down"></i>
+          <span>Descargar meme</span>
         </div>
       </main>
     </div>
     <!-- Inicio aside imagen -->
-    <aside class="containerControlDark" id="controlImagen">
-      <h2>IMAGEN</h2>
+    <aside class="container-control dark-aside" id="control-imagen">
+      <h3>IMAGEN</h3>
       <div>
         <h4>URL</h4>
-        <input type="text">
+        <input type="text" id="img-url">
       </div>
       <div>
         <h4>FONDO</h4>
         <div>
-         <button>
-          <input type="color" id="imgColorInput" class="input-color">
-          <span>#00000</span>
-        </button> 
-        <select id="imgEstilo">
-          <option value="unset">Ninguno</option>
-          <option value="lighten">Aclarar</option>
-          <option value="darken">Oscurecer</option>
-          <option value="difference">Diferencia/option>
-          <option value="iluminosity">Luminosidad</option>
-          <option value="multiply">Multiplicar</option>
-        </select>
+          <button>
+            <input type="color" id="imgColorInput" class="input-color">
+            <span></span>
+          </button>
+          <select id="imgEstilo">
+            <option value="unset">Ninguno</option>
+            <option value="lighten">Aclarar</option>
+            <option value="darken">Oscurecer</option>
+            <option value="difference">Diferencia/option>
+            <option value="iluminosity">Luminosidad</option>
+            <option value="multiply">Multiplicar</option>
+          </select>
         </div>
-        
       </div>
       <div>
         <h4>FILTROS</h4>
@@ -121,8 +105,8 @@
     </aside>
 
     <!-- Control texto aside -->
-    <aside class="containerControlDark text-container" id="controlText">
-      <h2>TEXTO</h2>
+    <aside class="container-control dark-aside hiden" id="control-text">
+      <h3>TEXTO</h3>
       <div class="text-container">
         <h4>Texto superior</h4>
         <div>
@@ -159,9 +143,15 @@
       <div class="aligntext">
         <input type="number" id="fontSize" min="8" max="72" step="2" value="16">
         <label for="fontSize"></label>
-        <button id="alignLeftBtn" class="alignButton">izq</button>
-        <button id="alignCenterBtn" class="alignButton">center</button>
-        <button id="alignRightBtn" class="alignButton">der</button>
+        <button id="align-left-btn" type="button" class="alignButton">
+          <i class="fa-solid fa-align-left"></i>
+        </button>
+        <button id="align-center-btn" type="button" class="alignButton">
+          <i class="fa-solid fa-align-justify"></i>
+        </button>
+        <button id="align-right-btn"  type="button" class="alignButton">
+          <i class="fa-solid fa-align-right"></i>
+        </button>
       </div>
       <div class="container-color">
         <div class="text-container">
@@ -183,7 +173,7 @@
         <input type="checkbox" id="checkboxTransparente">
         <label for="transparentCheckbox">Fondo transparente</label>
       </div>
-      <div >
+      <div>
         <h4>Contorno</h4>
         <div class="container-color">
           <button id="ningunob-btn" class="">Ninguno</button>
@@ -206,10 +196,9 @@
           <option value="2.5">2.5</option>
         </select>
       </div>
-
-  </div>
-  </div>
-  <div>
+      </div>
+      </div>
+      <div>
     </aside>
   </div>
 
