@@ -29,12 +29,12 @@
       </header>
       <main class="main-dark" id="main-container">
         <div class="container-meme" id="meme-container">
-          <div class="texto-meme" id="txt-top">
+          <div class="texto-meme" id="preview-txt-top">
             Top text
           </div>
           <div class="img-meme" id="img-meme">
           </div>
-          <div class="texto-meme" id="txt-bottom">
+          <div class="texto-meme" id="preview-txt-bottom">
             Botton text
           </div>
         </div>
@@ -110,28 +110,28 @@
       <div class="text-container">
         <h4>Texto superior</h4>
         <div>
-          <label for="topText"></label>
-          <input type="text" id="topText" placeholder="Texto superior">
+          <label for="top-txt"></label>
+          <input type="text" id="top-txt" placeholder="Texto superior">
         </div>
         <div>
-          <input type="checkbox" id="hideTopText">
+          <input type="checkbox" id="hidenTopTxt">
           <label for="hideTopText">Sin texto superior</label>
         </div>
       </div>
       <div class="text-container">
         <h4>Texto inferior</h4>
         <div>
-          <label for="bottonText"></label>
-          <input type="text" id="bottomText" placeholder="Texto inferior">
+          <label for="botton-txt"></label>
+          <input type="text" id="botton-txt" placeholder="Texto inferior">
         </div>
         <div>
-          <input type="checkbox" id="hideBottonText">
+          <input type="checkbox" id="hidenTxtBotton">
           <label for="hideBottonText">Sin texto inferior</label>
         </div>
       </div>
       <div class="text-container">
         <h4>Fuente</h4>
-        <select id="fontFamily">
+        <select id="font-family">
           <option value="Arial">Arial</option>
           <option value="Verdana">Verdana</option>
           <option value="Helvetica">Helvetica</option>
@@ -141,8 +141,8 @@
         </select>
       </div>
       <div class="aligntext">
-        <input type="number" id="fontSize" min="8" max="72" step="2" value="16">
-        <label for="fontSize"></label>
+        <input type="number" id="font-size" min="8" max="72" step="2" value="16">
+        <label for="font-size"></label>
         <button id="align-left-btn" type="button" class="alignButton">
           <i class="fa-solid fa-align-left"></i>
         </button>
@@ -157,7 +157,7 @@
         <div class="text-container">
           <h4>Color</h4>
           <button>
-            <input type="color" id="textColorInput" class="input-color">
+            <input type="color" id="txt-color-input" class="input-color">
             <span>#00000</span>
           </button>
         </div>
