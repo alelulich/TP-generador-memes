@@ -1,11 +1,35 @@
 * {
     box-sizing: border-box;
-    margin: 0px
 }
 body{
     font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+}
+.general-container{
+    display: flex;
+    /* align-items: center; */
+    flex-grow: 1;
+    height: 100vh;
+    background-color: rgb(11, 38, 39);
+}
+.central-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    width: 70%;
+    flex-direction: column;
+    width: 600px;
+    margin: 0;
 }
 
+
+/* Estilos segun modo claro/oscuro */
+.container-control{
+    width: 250px;
+    padding: 15px 10px;
+    margin-left: 0;
+    height: 100%;
+}
 nav {
     display: flex;
     justify-content: center;
@@ -28,8 +52,9 @@ h4{
     background-color: rgb(31, 56, 51);
     color: white;
     padding: 15px;
+    width: 100%;
 }
-.light-head{
+.light-header{
     background-color: rgb(188, 184, 103);
     color: rgb(64, 63, 63);
 }
@@ -44,7 +69,7 @@ h4{
 }
 
 button:hover {
-    background-color: rgb(37, 75, 75);
+    background-color: rgb(105, 137, 137);
 }
 main {
     display: flex;
@@ -52,7 +77,7 @@ main {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-}
+} 
 .main-dark{
     background-color: darkslategray;
 }
@@ -61,9 +86,8 @@ main {
 }
 .container-meme {
     margin-top: 0px;
-    width: 50%;
-    height: 600px;
-    display: flex;
+    width: 600px;
+    height: 500px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -74,13 +98,13 @@ main {
 .texto-meme {
     width: 100%;
     height: 15%;
-    font-size: 2rem;
-    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
     text-align: center;
-    padding: 20px;
     background-color: white;
     color: black;
-    padding: 20px;
+    justify-content: center;
 }
 .text-outline-light{
     -webkit-text-stroke: 3px white;
@@ -89,37 +113,16 @@ main {
     -webkit-text-stroke: 3px black;
 }
 .img-meme {
-    width: 100%;
-    height: 70%;
+    /* width: 100%;
+    height: 70%; */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     flex-grow: 1;
 }
-.buttonDownload {
-    background-color: green;
-    color: white;
-    padding: 10px;
-    width: 200px;
-    margin: 15px;
-    border-radius: 5px;
-}
+
 h5{
     font-weight: lighter;
-}
-
-aside{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-}
-
-/* Estilos segun modo claro/oscuro */
-.container-control{
-    padding: 10px;
-    width: 300px;
-    padding: 15px 10px;
 }
 
 .dark-aside{
@@ -131,7 +134,7 @@ background-color: sandybrown;
 color: rgb(37, 37, 37);
 }
 
-/* selecytor imagen efecto */
+/* selector imagen efecto */
 .select-efect{
     height: 35px;
     margin-top: 0;
@@ -151,28 +154,17 @@ color: rgb(37, 37, 37);
     padding: 0;
   }
 
-  .select-color{
-    width: 50%;
-    height: 40px;
-    background-color: darkgrey;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    border: 1px solid red;
-  }
-
-
 /* inicia el estilado de los range */
 input[type=range] {
     -webkit-appearance: none;
-    margin: 5px 0;
+    margin: 15px 0;
     width: 95%;
   }
   input[type=range]:focus {
     outline: none;
   }
   input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
+    width: 300px;
     height: 5px;
     cursor: pointer;
     /* animation: 0.2s; */
@@ -193,15 +185,12 @@ input[type=range] {
   input[type=range]:focus::-webkit-slider-runnable-track {
     background: rgb(168, 167, 167);
   }
-  
-
 .controlRange{
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
     margin: 10px;
 }
-
 .button-filters {
     background-color: grey;
     color: white;
@@ -211,9 +200,16 @@ input[type=range] {
     margin-top: 20px;
 }
 /* fin panel imagen */
-
 .container-color {
     display: flex;
     margin-top: 10px;
 }
-
+.buttonDownload {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    margin: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
