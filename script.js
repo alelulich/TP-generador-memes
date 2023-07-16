@@ -2,9 +2,6 @@
 //llamo a aside texto e imagen
 const txtAside = document.getElementById('control-text');
 const imgAside = document.getElementById('control-imagen');
-const imgUrl = document.getElementById('img-url');
-const memeImg = document.getElementById('img-meme');
-const memeContainer = document.getElementById('meme-container');
 
 //llamo a mis botones de header
 const txtBtn = document.getElementById('txt-btn');
@@ -44,17 +41,77 @@ function changeMode() {
     }
 }
 
-// controles de imagen
+//-----------------CONTROL ASIDE IMAGEN ------------------------------------------------
+// llammo a los campos 
+const imgUrl = document.getElementById('img-url');
+const memeImg = document.getElementById('img-meme');
+const memeContainer = document.getElementById('meme-container');
+// selector color fondo
+const selectedColorImgBackground = document.getElementById('img-color-input');
+const imgColorName = document.getElementById('img-color-name');
+// selector estilo
+const imgEfect = document.getElementById('img-efect');
+// - Filtros imagen
+const brightInput = document.getElementById('r-bright');
+const opacityInput = document.getElementById('r-opacity');
+const contrastInput = document.getElementById('r-contrast');
+const blurInput = document.getElementById('r-blur');
+const grayscaleInput = document.getElementById('r-greyscale');
+const sepiaInput = document.getElementById('r-sepia');
+const hueInput = document.getElementById('r-hue');
+const saturationInput = document.getElementById('r-saturation');
+const invertInput = document.getElementById('r-invert');
+
+// agrego los adEventListener - llamo a la funcion
+
 // añadir url - Ver que ocupe todo el main de fonco...
 imgUrl.addEventListener('input', (e) => changeBackground(e));
 
+// color de fondo
+selectedColorImgBackground.addEventListener('input', changeImgBackgroundColor);
+// estilo imagen
+imgEfect.addEventListener('change', () => changeEfect());
+
+
+// Armo las funciones ------------
+// Agreego imagen url al container meme - OK
 const changeBackground = (e) => {
-    console.log(e.target.value)
-    memeContainer.style.backgroundImage = `url(${e.target.value})`
+    memeContainer.style.backgroundImage = `url(${e.target.value})`;
+    memeContainer.style.backgroundSize = 'cover';
+    memeContainer.style.backgroundRepeat = 'no-repeat';
+    memeContainer.style.backgroundPosition = 'center';
+}
+
+// cambio color fondo imagen - OK
+function changeImgBackgroundColor() {
+    const selectedColorImg  = selectedColorImgBackground.value
+     memeContainer.style.backgroundColor = selectedColorImg;
+     imgColorName.innerHTML = `${selectedColorImgBackground.value}`;
+}
+// agregar estilo imagen - OK
+function changeEfect() {
+    memeContainer.style.backgroundBlendMode = `${imgEfect.value}`
 }
 
 
-//-----------------controles de texto  ------------------------------------------------
+// Filtro imagen
+brightInput.addEventListener('input', (e) => filtros(e));
+opacityInput.addEventListener('input', (e) => filtros(e));
+contrastInput.addEventListener('input', (e) => filtros(e));
+blurInput.addEventListener('input', (e) => filtros(e));
+grayscaleInput.addEventListener('input', (e) => filtros(e));
+sepiaInput.addEventListener('input', (e) => filtros(e));
+hueInput.addEventListener('input', (e) => filtros(e));
+saturationInput.addEventListener('input', (e) => filtros(e));
+invertInput.addEventListener('input', (e) => filtros(e));
+
+// filtros imagen
+const filtros = (e) => {
+    console.log(e.target.value) // OK
+    memeContainer.style.filter = `brightness(${brightInput.value}) opacity(${opacityInput.value}) contrast(${contrastInput.value}) blur(${blurInput.value}) grayscale(${grayscaleInput.value}) sepia(${sepiaInput.value}) hue-rotate(${hueInput.value}) saturate(${saturationInput.value}) invert(${invertInput.value})`;
+ };
+
+//-----------------CONTROL ASIDE TEXTO ------------------------------------------------
 
 //llamo a los campos donde escribo el textos
 const txtTopElement = document.getElementById('top-txt');
@@ -121,7 +178,7 @@ outlineDarkBtn.addEventListener('click', outlineDarkOn);
 // espaciado de texto
 
 
-//-------------------------Funciones para modificar los textos ---------------------------------------//
+//-------------------------Funciones para modificar los textos ---------------------------------------
 
 //modificar texto - OK - ----------------------------------------
 function updateTopText() {
@@ -221,3 +278,4 @@ function changeTxtInterline() {
     previewTxtTopElement.style.lineHeight = `${txtInterline.value}`;
     previewTxtBottomElement.style.lineHeight = `${txtInterline.value}`;
 }
+//----------------- FIN CONTROL ASIDE TEXTO --------------------------------

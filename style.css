@@ -131,6 +131,11 @@ background-color: sandybrown;
 color: rgb(37, 37, 37);
 }
 
+/* selecytor imagen efecto */
+.select-efect{
+    height: 35px;
+    margin-top: 0;
+}
  /* estilado de los input color */
  .input-color{
     width: 25px;
@@ -197,7 +202,7 @@ input[type=range] {
     margin: 10px;
 }
 
-.buttonFilters {
+.button-filters {
     background-color: grey;
     color: white;
     padding: 5px;

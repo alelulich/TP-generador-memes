@@ -59,10 +59,10 @@
         <h4>FONDO</h4>
         <div>
           <button>
-            <input type="color" id="imgColorInput" class="input-color">
-            <span></span>
+            <input type="color" id="img-color-input" class="input-color">
+            <span id="img-color-name">#00000</span>
           </button>
-          <select id="imgEstilo">
+          <select id="img-efect" class="select-efect">
             <option value="unset">Ninguno</option>
             <option value="lighten">Aclarar</option>
             <option value="darken">Oscurecer</option>
@@ -75,35 +75,35 @@
       <div>
         <h4>FILTROS</h4>
       </div>
-      <div class="controlRange">
-        <label for="r-Brillo">Brillo</label>
-        <input type="range" id="r-Brillo">
+      <div class="control-range">
+        <label for="r-bright">Brillo</label>
+        <input type="range" id="r-bright" min="0" max="1" value="1" step="0.1">
 
-        <label for="r-Opacidad">Opacidad</label>
-        <input type="range" id="r-Opacidad">
+        <label for="r-opacity">Opacidad</label>
+        <input type="range" id="r-opacity" min="0" max="1" value="1" step="0.1">
 
-        <label for="r-Contraste">Contraste</label>
-        <input type="range" id="r-Contraste">
+        <label for="r-contrast">Contraste</label>
+        <input type="range" id="r-contrast" min="100" max="1000" value="100" step="10">
 
-        <label for="r-Desenfoque">Desenfoque</label>
-        <input type="range" id="r-Desenfoque">
+        <label for="r-blur">Desenfoque</label>
+        <input type="range" id="r-blur" min="0" max="10" value="0" step="0.1">
 
-        <label for="r-EscalaGrises">Escala de Grises</label>
-        <input type="range" id="r-EscalaGrises">
+        <label for="r-greyscale">Escala de Grises</label>
+        <input type="range" id="r-greyscale" min="0" max="100" value="0" step="1">
 
-        <label for="r-Sepia">Sepia</label>
-        <input type="range" id="r-Sepia">
+        <label for="r-sepia">Sepia</label>
+        <input type="range" id="r-sepia" min="0" max="100" value="0" step="10">
 
-        <label for="rangeHue">Hue</label>
-        <input type="range" id="r-Hue">
+        <label for="r-hue">Hue</label>
+        <input type="range" id="r-hue" min="0" max="359" value="0" step="1">
 
-        <label for="r-Saturado">Saturado</label>
-        <input type="range" id="r-Saturado">
+        <label for="r-saturation">Saturado</label>
+        <input type="range" id="r-saturation" min="100" max="1000" value="100" step="10">
 
-        <label for="rangeNegativo">Negativo</label>
-        <input type="range" id="r-Negativo">
+        <label for="r-invert">Negativo</label>
+        <input type="range" id="r-invert" min="0" max="1" value="1" step="0.1">
       </div>
-      <div class="buttonFilters">
+      <div class="button-filters">
         <span>Restablecer Filtros</span>
       </div>
     </aside>
