@@ -4,12 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TP-Memes-Lulich</title>
+  <title>TP-Meme-Go-Lulich</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/de304c45f9.js" crossorigin="anonymous"></script>
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+  integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+  integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
 </head>
 
 <body>
@@ -17,7 +29,7 @@
     <div class="central-container">
       <header class="header-dark" id="head-container">
         <div>
-          <h1>Memeitor</h1>
+          <h1>Meme-Go</h1>
         </div>
         <nav>
             <button class="btn-nav-dark" id="img-btn">
@@ -46,7 +58,7 @@
             </h3>
           </div>
         </div>
-        <div class="buttonDownload">
+        <div class="button-download" id="btn-download">
           <i class="fa-solid fa-circle-down"></i>
           <span>Descargar meme</span>
         </div>
@@ -102,15 +114,15 @@
         <label for="r-hue">Hue</label>
         <input type="range" id="r-hue" min="0" max="359" value="0" step="1">
 
-        <label for="r-saturation">Saturado</label>
+        <label for="r-saturation">Saturación</label>
         <input type="range" id="r-saturation" min="100" max="1000" value="100" step="10">
 
         <label for="r-invert">Negativo</label>
         <input type="range" id="r-invert" min="0" max="1" value="1" step="0.1">
       </div>
-      <div class="button-filters">
+      <button class="button-filters" id="reset-filter">
         <span>Restablecer Filtros</span>
-      </div>
+      </button>
     </aside>
 
     <!-- -------------Control texto aside---------------------------------------------------->

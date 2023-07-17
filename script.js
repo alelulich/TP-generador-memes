@@ -13,19 +13,19 @@ const mainContainer = document.getElementById('main-container');
 const headContainer = document.getElementById('head-container');
 
 
-//defino la función ocultar aside texto - OK
+//defino la función ocultar aside texto - OK -----------------
 const hidenTxtAside = () => {
     imgAside.classList.add("hiden");
     txtAside.classList.remove("hiden");
 }
 
-//defino la función ocultar aside imagen - OK
+//defino la función ocultar aside imagen - OK -----------
 const hidenImgAside = () => {
     txtAside.classList.add("hiden");
     imgAside.classList.remove("hiden");
 };
 
-//añado el evento click a txtBtn - OK
+//añado el evento click a txtBtn - OK ---------------
 txtBtn.addEventListener("click", () => hidenTxtAside());
 imgBtn.addEventListener("click", () => hidenImgAside());
 
@@ -74,7 +74,7 @@ imgEfect.addEventListener('change', () => changeEfect());
 
 
 // Armo las funciones ------------
-// Agreego imagen url al container meme - OK
+// Agreego imagen url al container meme - OK -----------
 const changeBackground = (e) => {
     memeContainer.style.backgroundImage = `url(${e.target.value})`;
     memeContainer.style.backgroundSize = 'cover';
@@ -82,17 +82,16 @@ const changeBackground = (e) => {
     memeContainer.style.backgroundPosition = 'center';
 }
 
-// cambio color fondo imagen - OK
+// cambio color fondo imagen - OK ----------------
 function changeImgBackgroundColor() {
     const selectedColorImg  = selectedColorImgBackground.value
      memeContainer.style.backgroundColor = selectedColorImg;
      imgColorName.innerHTML = `${selectedColorImgBackground.value}`;
 }
-// agregar estilo imagen - OK
+// agregar estilo imagen - OK ------------
 function changeEfect() {
     memeContainer.style.backgroundBlendMode = `${imgEfect.value}`
 }
-
 
 // Filtro imagen
 brightInput.addEventListener('input', (e) => filtros(e));
@@ -110,6 +109,27 @@ const filtros = (e) => {
     console.log(e.target.value) // OK
     memeContainer.style.filter = `brightness(${brightInput.value}) opacity(${opacityInput.value}) contrast(${contrastInput.value}) blur(${blurInput.value}) grayscale(${grayscaleInput.value}) sepia(${sepiaInput.value}) hue-rotate(${hueInput.value}) saturate(${saturationInput.value}) invert(${invertInput.value})`;
  };
+
+ // Reset filtros -- OK ---
+ const resetFilterBtn = document.getElementById('reset-filter');
+
+ resetFilterBtn.addEventListener('click', resetAllFilters);
+
+ function resetAllFilters(event) {
+    event.preventDefault();
+
+    brightInput.value = 1;
+    opacityInput.value = 1;
+    contrastInput.value = 100;
+    blurInput.value = 0;
+    grayscaleInput.value = 0;
+    sepiaInput.value = 0;
+    hueInput.value = 0;
+    saturationInput.value = 100;
+    invertInput.value = 1;
+
+    memeContainer.style.filter = "none";
+};
 
 //-----------------CONTROL ASIDE TEXTO ------------------------------------------------
 
@@ -269,7 +289,7 @@ function outlineNoneOn() {
 // espaciado -------- 
 
 
-// Interlineado
+// Interlineado - OK ---------------
 const txtInterline = document.getElementById('font-line');
 
 txtInterline.addEventListener('change', changeTxtInterline);
@@ -279,3 +299,20 @@ function changeTxtInterline() {
     previewTxtBottomElement.style.lineHeight = `${txtInterline.value}`;
 }
 //----------------- FIN CONTROL ASIDE TEXTO --------------------------------
+
+// --------------- Descara meme ---- OK -----------------------
+//llamo al contenedor de meme
+const memeFull = document.getElementById('meme-container');
+//llamo el boton de descarga
+const downloadBtn = document.getElementById('btn-download');
+
+// funcion download meme 
+const downloadMeme = () => {
+    domtoimage.toBlob(memeFull).then(function (blob) {
+        window.saveAs(blob, "memeitor.png");
+    });
+};
+// 
+downloadBtn.addEventListener('click', downloadMeme);
+
+// ------------------ F I N ------------------------------------

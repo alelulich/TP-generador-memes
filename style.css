@@ -22,7 +22,6 @@ body{
     margin: 0;
 }
 
-
 /* Estilos segun modo claro/oscuro */
 .container-control{
     width: 250px;
@@ -204,7 +203,7 @@ input[type=range] {
     display: flex;
     margin-top: 10px;
 }
-.buttonDownload {
+.button-download {
     background-color: green;
     color: white;
     padding: 10px;
@@ -212,4 +211,5 @@ input[type=range] {
     margin: 15px;
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
 }
