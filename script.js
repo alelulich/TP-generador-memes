@@ -51,16 +51,7 @@ const selectedColorImgBackground = document.getElementById('img-color-input');
 const imgColorName = document.getElementById('img-color-name');
 // selector estilo
 const imgEfect = document.getElementById('img-efect');
-// - Filtros imagen
-const brightInput = document.getElementById('r-bright');
-const opacityInput = document.getElementById('r-opacity');
-const contrastInput = document.getElementById('r-contrast');
-const blurInput = document.getElementById('r-blur');
-const grayscaleInput = document.getElementById('r-greyscale');
-const sepiaInput = document.getElementById('r-sepia');
-const hueInput = document.getElementById('r-hue');
-const saturationInput = document.getElementById('r-saturation');
-const invertInput = document.getElementById('r-invert');
+
 
 // agrego los adEventListener - llamo a la funcion
 
@@ -93,6 +84,15 @@ function changeEfect() {
     memeContainer.style.backgroundBlendMode = `${imgEfect.value}`
 }
 
+// - Filtros imagen
+const brightInput = document.getElementById('r-bright');
+const opacityInput = document.getElementById('r-opacity');
+const contrastInput = document.getElementById('r-contrast');
+const blurInput = document.getElementById('r-blur');
+const grayscaleInput = document.getElementById('r-greyscale');
+const sepiaInput = document.getElementById('r-sepia');
+const invertInput = document.getElementById('r-invert');
+
 // Filtro imagen
 brightInput.addEventListener('input', (e) => filtros(e));
 opacityInput.addEventListener('input', (e) => filtros(e));
@@ -100,16 +100,21 @@ contrastInput.addEventListener('input', (e) => filtros(e));
 blurInput.addEventListener('input', (e) => filtros(e));
 grayscaleInput.addEventListener('input', (e) => filtros(e));
 sepiaInput.addEventListener('input', (e) => filtros(e));
-hueInput.addEventListener('input', (e) => filtros(e));
-saturationInput.addEventListener('input', (e) => filtros(e));
 invertInput.addEventListener('input', (e) => filtros(e));
 
 // filtros imagen
 const filtros = (e) => {
     console.log(e.target.value) // OK
-    memeContainer.style.filter = `brightness(${brightInput.value}) opacity(${opacityInput.value}) contrast(${contrastInput.value}) blur(${blurInput.value}) grayscale(${grayscaleInput.value}) sepia(${sepiaInput.value}) hue-rotate(${hueInput.value}) saturate(${saturationInput.value}) invert(${invertInput.value})`;
- };
-
+    memeContainer.style.filter = 
+    `brightness(${brightInput.value})
+    opacity(${opacityInput.value})
+    contrast(${contrastInput.value}%)
+    blur(${blurInput.value}px) 
+    grayscale(${grayscaleInput.value}%)
+    sepia(${sepiaInput.value}%)
+    invert(${invertInput.value})`
+};
+  
  // Reset filtros -- OK ---
  const resetFilterBtn = document.getElementById('reset-filter');
 
