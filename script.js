@@ -14,20 +14,22 @@ const headContainer = document.getElementById('head-container');
 
 
 //defino la función ocultar aside texto - OK -----------------
-const hidenTxtAside = () => {
-    imgAside.classList.add("hiden");
-    txtAside.classList.remove("hiden");
-}
+function hiddenTxtAside() {
+    console.log('holas')
+    imgAside.classList.add("hidden");
+    txtAside.classList.remove("hidden");
+};
 
 //defino la función ocultar aside imagen - OK -----------
-const hidenImgAside = () => {
-    txtAside.classList.add("hiden");
-    imgAside.classList.remove("hiden");
+function hiddenImgAside() {
+    console.log('chan')
+    txtAside.classList.add("hidden");
+    imgAside.classList.remove("hidden");
 };
 
 //añado el evento click a txtBtn - OK ---------------
-txtBtn.addEventListener("click", () => hidenTxtAside());
-imgBtn.addEventListener("click", () => hidenImgAside());
+txtBtn.addEventListener("click", () => hiddenTxtAside());
+imgBtn.addEventListener("click", () => hiddenImgAside());
 
 // cammbio modo claro oscuro - cambia el boton pero no vuelve cuando hago otro click!!!
 modeBtn.addEventListener("click", changeMode);
@@ -39,7 +41,7 @@ function changeMode() {
     } else {
         modeBtn.innerText = "🌙 Modo Oscuro";
     }
-}
+};
 
 //-----------------CONTROL ASIDE IMAGEN ------------------------------------------------
 // llammo a los campos 
@@ -51,7 +53,14 @@ const selectedColorImgBackground = document.getElementById('img-color-input');
 const imgColorName = document.getElementById('img-color-name');
 // selector estilo
 const imgEfect = document.getElementById('img-efect');
-
+// - Filtros imagen - 
+const brightInput = document.getElementById('r-bright');
+const opacityInput = document.getElementById('r-opacity');
+const contrastInput = document.getElementById('r-contrast');
+const blurInput = document.getElementById('r-blur');
+const grayscaleInput = document.getElementById('r-greyscale');
+const sepiaInput = document.getElementById('r-sepia');
+const invertInput = document.getElementById('r-invert');
 
 // agrego los adEventListener - llamo a la funcion
 
@@ -62,37 +71,6 @@ imgUrl.addEventListener('input', (e) => changeBackground(e));
 selectedColorImgBackground.addEventListener('input', changeImgBackgroundColor);
 // estilo imagen
 imgEfect.addEventListener('change', () => changeEfect());
-
-
-// Armo las funciones ------------
-// Agreego imagen url al container meme - OK -----------
-const changeBackground = (e) => {
-    memeContainer.style.backgroundImage = `url(${e.target.value})`;
-    memeContainer.style.backgroundSize = 'cover';
-    memeContainer.style.backgroundRepeat = 'no-repeat';
-    memeContainer.style.backgroundPosition = 'center';
-}
-
-// cambio color fondo imagen - OK ----------------
-function changeImgBackgroundColor() {
-    const selectedColorImg  = selectedColorImgBackground.value
-     memeContainer.style.backgroundColor = selectedColorImg;
-     imgColorName.innerHTML = `${selectedColorImgBackground.value}`;
-}
-// agregar estilo imagen - OK ------------
-function changeEfect() {
-    memeContainer.style.backgroundBlendMode = `${imgEfect.value}`
-}
-
-// - Filtros imagen
-const brightInput = document.getElementById('r-bright');
-const opacityInput = document.getElementById('r-opacity');
-const contrastInput = document.getElementById('r-contrast');
-const blurInput = document.getElementById('r-blur');
-const grayscaleInput = document.getElementById('r-greyscale');
-const sepiaInput = document.getElementById('r-sepia');
-const invertInput = document.getElementById('r-invert');
-
 // Filtro imagen
 brightInput.addEventListener('input', (e) => filtros(e));
 opacityInput.addEventListener('input', (e) => filtros(e));
@@ -102,11 +80,32 @@ grayscaleInput.addEventListener('input', (e) => filtros(e));
 sepiaInput.addEventListener('input', (e) => filtros(e));
 invertInput.addEventListener('input', (e) => filtros(e));
 
-// filtros imagen
+// Armo las funciones ------------
+// Agreego imagen url al container meme - OK -----------
+function changeBackground(e) {
+    console.log('hola')
+    memeImg.style.backgroundImage = `url(${e.target.value})`;
+    memeImg.style.backgroundSize = 'cover';
+    memeImg.style.backgroundRepeat = 'no-repeat';
+    memeImg.style.backgroundPosition = 'center';
+}
+
+// cambio color fondo imagen - OK ----------------
+function changeImgBackgroundColor() {
+    const selectedColorImg = selectedColorImgBackground.value
+    memeImg.style.backgroundColor = selectedColorImg;
+    imgColorName.innerHTML = `${selectedColorImgBackground.value}`;
+}
+// agregar estilo imagen - OK ------------
+function changeEfect() {
+    memeImg.style.backgroundBlendMode = `${imgEfect.value}`
+}
+
+// Funcion filtros imagen -- OK ----------- 
 const filtros = (e) => {
     console.log(e.target.value) // OK
-    memeContainer.style.filter = 
-    `brightness(${brightInput.value})
+    memeImg.style.filter =
+        `brightness(${brightInput.value})
     opacity(${opacityInput.value})
     contrast(${contrastInput.value}%)
     blur(${blurInput.value}px) 
@@ -114,13 +113,13 @@ const filtros = (e) => {
     sepia(${sepiaInput.value}%)
     invert(${invertInput.value})`
 };
-  
- // Reset filtros -- OK ---
- const resetFilterBtn = document.getElementById('reset-filter');
 
- resetFilterBtn.addEventListener('click', resetAllFilters);
+// Reset filtros -- OK ---
+const resetFilterBtn = document.getElementById('reset-filter');
 
- function resetAllFilters(event) {
+resetFilterBtn.addEventListener('click', resetAllFilters);
+
+function resetAllFilters(event) {
     event.preventDefault();
 
     brightInput.value = 1;
@@ -129,21 +128,19 @@ const filtros = (e) => {
     blurInput.value = 0;
     grayscaleInput.value = 0;
     sepiaInput.value = 0;
-    hueInput.value = 0;
-    saturationInput.value = 100;
-    invertInput.value = 1;
+    invertInput.value = 0;
 
-    memeContainer.style.filter = "none";
+    memeImg.style.filter = "none";
 };
 
-//-----------------CONTROL ASIDE TEXTO ------------------------------------------------
+//---------------------------------------------------CONTROL ASIDE TEXTO ------------------------------------------------
 
 //llamo a los campos donde escribo el textos
 const txtTopElement = document.getElementById('top-txt');
 const txtBottomElement = document.getElementById('botton-txt');
 //llamo a los check para ocultar txt
-const hideTxtTopElement = document.getElementById('hidenTopTxt');
-const hideTxtBottonElement = document.getElementById('hidenTxtBotton');
+const hideTxtTopElement = document.getElementById('hiddenTopTxt');
+const hideTxtBottonElement = document.getElementById('hiddenTxtBotton');
 // llamo al combo fuentes
 const fontFamilyElement = document.getElementById('font-family');
 //llamo al combo tamaño fuente
@@ -214,10 +211,10 @@ function updateBottomText() {
 }
 // Ocultar/mostrar texto - OK (ver que pasa cuando oculto el de abajo no funciona bien...)
 function toggleTopText() {
-    backgroundTopTxt.style.display = hideTxtTopElement.checked ? 'none' : 'block';
+    previewTxtTopElement.style.display = hideTxtTopElement.checked ? 'none' : 'block';
 }
 function toggleBottonText() {
-    backgroundBottonTxt.style.display = hideTxtBottonElement.checked ? 'none' : 'block';
+    previewTxtBottomElement.style.display = hideTxtBottonElement.checked ? 'none' : 'block';
 }
 // Cambiar la fuente - OK----------------------------------------------------
 function changeFontFamily() {
@@ -254,18 +251,18 @@ function changeTextColor() {
 // cambio color fondo textos - OK-------------------------------------------
 function changeBackgroundColor() {
     const selectedColor = backgroundColorInput.value;
-    backgroundTopTxt.style.backgroundColor = selectedColor;
-    backgroundBottonTxt.style.backgroundColor = selectedColor;
+    previewTxtTopElement.style.backgroundColor = selectedColor;
+    previewTxtBottomElement.style.backgroundColor = selectedColor;
     backgroundColorName.innerHTML = `${backgroundColorInput.value}`;
 }
 // cambio dondo texto a transparente - OK----------------------------------------
 function transparentBackground() {
     if (transparentTxtBackground.checked) {
-        backgroundTopTxt.style.backgroundColor = 'transparent';
-        backgroundBottonTxt.style.backgroundColor = 'transparent';
+        previewTxtTopElement.style.backgroundColor = 'transparent';
+        previewTxtBottomElement.style.backgroundColor = 'transparent';
     } else {
-        backgroundTopTxt.style.backgroundColor = backgroundColorInput.value;
-        backgroundBottonTxt.style.backgroundColor = backgroundColorInput.value;
+        previewTxtTopElement.style.backgroundColor = backgroundColorInput.value;
+        previewTxtBottomElement.style.backgroundColor = backgroundColorInput.value;
     }
 }
 
@@ -314,10 +311,45 @@ const downloadBtn = document.getElementById('btn-download');
 // funcion download meme 
 const downloadMeme = () => {
     domtoimage.toBlob(memeFull).then(function (blob) {
-        window.saveAs(blob, "memeitor.png");
+        window.saveAs(blob, "mi-meme-GO.png");
     });
 };
 // 
 downloadBtn.addEventListener('click', downloadMeme);
 
-// ------------------ F I N ------------------------------------
+// ------------------ F I N  FUNCIONALIDADES------------------------------------
+
+///-------------medias querys-----
+
+// Ocultar aside si es pequeña la pantalla ------------------
+function resizeWindow() {
+    console.log('hola');
+    if (document.body.getBoundingClientRect().width < 900) {
+        txtAside.classList.add("hidden");
+        imgAside.classList.add("hidden");
+    } else {
+        txtAside.classList.remove("hidden");
+        //   imgAside.classList.remove("hidden");
+    }
+}
+ window.addEventListener('resize', resizeWindow)
+  
+// close aside imagen--
+const closeBtnImg = document.getElementById('close-btn-img');
+
+const closeImg = () => {
+    console.log('imagen-out')
+    imgAside.classList.add("hidden");
+}
+
+closeBtnImg.addEventListener('click', closeImg);
+
+// close aside text
+const closeBtnTxt = document.getElementById('close-btn-txt');
+
+const closeTxt = () => {
+    console.log('texto-out')
+    txtAside.classList.add("hidden");
+}
+
+closeBtnTxt.addEventListener('click', closeTxt);
