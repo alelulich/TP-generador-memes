@@ -84,7 +84,7 @@ h4 {
     border-radius: 5px;
     margin: 5px;
     padding: 5px 10px;
-    background-color: pink;
+    background-color: rgb(163, 159, 160);
     color: rgb(41, 41, 41);
     border: 0px;
     cursor: pointer;
@@ -95,7 +95,7 @@ h4 {
 }
 
 .light-aside {
-    background-color: pink;
+    background-color: rgb(156, 158, 158);
     color: rgb(39, 38, 38);
 }
 .hidden {

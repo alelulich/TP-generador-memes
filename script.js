@@ -11,18 +11,17 @@ const modeBtn = document.getElementById('modo-btn');
 //llamo a los  campos para cambiar el modo
 const mainContainer = document.getElementById('main-container');
 const headContainer = document.getElementById('head-container');
+const superContainer = document.getElementById('super-container');
 
 
 //defino la función ocultar aside texto - OK -----------------
 function hiddenTxtAside() {
-    console.log('holas')
     imgAside.classList.add("hidden");
     txtAside.classList.remove("hidden");
 };
 
 //defino la función ocultar aside imagen - OK -----------
 function hiddenImgAside() {
-    console.log('chan')
     txtAside.classList.add("hidden");
     imgAside.classList.remove("hidden");
 };
@@ -35,11 +34,20 @@ imgBtn.addEventListener("click", () => hiddenImgAside());
 modeBtn.addEventListener("click", changeMode);
 
 function changeMode() {
+    superContainer.classList.toggle("general-container-light");
+    headContainer.classList.toggle("header-light");
+    imgAside.classList.toggle("light-aside");
+    txtAside.classList.toggle("light-aside");
+    txtBtn.classList.toggle('btn-nav-light');
+    imgBtn.classList.toggle('btn-nav-light');
+    modeBtn.classList.toggle('btn-nav-light');
 
-    if (imgAside.classList.contains("dark-aside")) {
-        modeBtn.innerText = "🌞 Modo Claro";
-    } else {
+    if (imgAside.classList.contains("aside-dark")) {
+        console.log('light')
         modeBtn.innerText = "🌙 Modo Oscuro";
+    } else {
+        console.log('dark')
+        modeBtn.innerText = "🌞 Modo Claro";
     }
 };
 
